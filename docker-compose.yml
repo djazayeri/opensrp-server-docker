@@ -1,0 +1,12 @@
+couch:
+  image: klaemo/couchdb:1.6.1
+  ports:
+    - "5984:5984"
+pgsql:
+  build: pgsql
+  ports:
+    - "5432:5432"
+activemq:
+  build: activemq
+  ports:
+    - "8161:8161"
