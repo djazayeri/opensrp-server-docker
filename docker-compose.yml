@@ -4,9 +4,24 @@ couch:
     - "5984:5984"
 pgsql:
   build: pgsql
+  environment:
+    - POSTGRES_PASSWORD=VA1913wm
   ports:
     - "5432:5432"
 activemq:
   build: activemq
   ports:
     - "8161:8161"
+mysql:
+  build: mysql
+  environment:
+    - MYSQL_ROOT_PASSWORD=openmrs
+    - STARTUP_SQL=/tmp/init.sql
+  ports:
+    - "3306:3306"
+omrs:
+  build: openmrs
+  links:
+    - mysql
+  ports:
+    - "8081:8080"

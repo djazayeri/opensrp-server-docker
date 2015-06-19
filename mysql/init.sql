@@ -1,0 +1,7 @@
+CREATE DATABASE openmrs
+  DEFAULT CHARACTER SET utf8
+  DEFAULT COLLATE utf8_general_ci;
+
+CREATE USER 'openmrs'@'%' IDENTIFIED BY 'openmrs';
+GRANT ALL PRIVILEGES ON openmrs.* TO 'openmrs'@'%';
+FLUSH PRIVILEGES;
